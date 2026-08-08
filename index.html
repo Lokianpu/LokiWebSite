@@ -10,15 +10,23 @@
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <ul>
-            <li><a href="index.html" class="nav-home"><i class="fas fa-home"></i>Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="Projects.html">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="navbar-inner">
+            <a href="index.html" class="nav-brand">JTA</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="navMenu">
+                <li><a href="index.html" class="nav-home"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Hero Section (Home) -->
@@ -32,7 +40,6 @@
                 </div>
             </div>
             <div class="social-links">
-                 <a>
                 <a href="https://github.com/Lokianpu" target="_blank" class="social-link">
                     <i class="fab fa-github"></i> GitHub
                 </a>
@@ -44,7 +51,7 @@
                 </a>
             </div>
         </div>
-        
+
         <div class="hero-right">
             <div class="quick-facts">
                 <h3>Quick Facts</h3>
@@ -72,30 +79,71 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section liquid-glass">
-        <h2>About Me</h2>
-        <div class="card">
-            <p class="about-text">
-             I am a passionate frontend developer who brings ideas to life through clean design and efficient code. With skills in HTML, CSS, Java, JavaScript,
-              Canva, AI's and Figma, I create modern, responsive, and user-friendly websites that feel smooth on any device.
-              I love turning simple concepts into visually engaging experiences that capture attention and keep users exploring.
-            </p>
-            <p class="about-text">
-                My approach combines technical expertise with creative problem-solving. I believe in writing 
-                clean, maintainable code and staying updated with the latest web technologies and best practices.
-            </p>
-            <p class="about-text">
-            I look forward to working with companies like Google, Microsoft, Apple, Meta, or any other platform as a Frontend Designer.
-             I'm also eager to work with clients and teams, as these opportunities will help me grow my skills and knowledge in this field.
-            </p>
-        </div>
-    </section>
+    <!-- About + Skills row: two independent sections placed side by side -->
+    <div class="section-row">
+        <!-- About Section -->
+        <section id="about" class="section liquid-glass">
+            <h2>About Me</h2>
+            <div class="card">
+                <p class="about-text">
+                 I am a passionate frontend developer who brings ideas to life through clean design and efficient code. With skills in HTML, CSS, Java, JavaScript,
+                  Canva, AI's and Figma, I create modern, responsive, and user-friendly websites that feel smooth on any device.
+                  I love turning simple concepts into visually engaging experiences that capture attention and keep users exploring.
+                </p>
+                <p class="about-text">
+                    My approach combines technical expertise with creative problem-solving. I believe in writing 
+                    clean, maintainable code and staying updated with the latest web technologies and best practices.
+                </p>
+                <p class="about-text">
+                I look forward to working with companies like Google, Microsoft, Apple, Meta, or any other platform as a Frontend Designer.
+                 I'm also eager to work with clients and teams, as these opportunities will help me grow my skills and knowledge in this field.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section liquid-glass">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="card">
+                    <h3>Frontend Technologies</h3>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Tools & Platforms</h3>
+                    <ul>
+                        <li>Git & GitHub</li>
+                        <li>Visual Studio Code</li>
+                        <li>jetBrain IntelliJ</li>
+                        <li>Figma</li>
+                        <li>Claude AI</li>
+                        <li>Kimi AI</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Problem Solving</li>
+                        <li>Team Collaboration</li>
+                        <li>Communication</li>
+                        <li>Quality Output</li>
+                        <li>Project Management</li>
+                        <li>Attention to Detail</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Experience Section -->
-    <section id="experience" class="section liquid-glass">
+    <section id="experience" class="section section-wide liquid-glass">
         <h2>Work Experience</h2>
         <div class="card">
+            <div class="table-wrapper">
             <table class="table">
                 <thead>
                     <tr>
@@ -107,93 +155,58 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>2025</td>
-                        <td>Student Trainee</td>
-                        <td>Northills College of Asia</td>
-                        <td>Completed Work Immersion in Computer Maintenance at Northills College of Asia</td>
+                        <td data-label="Year">2025</td>
+                        <td data-label="Position">Student Trainee</td>
+                        <td data-label="Company">Northills College of Asia</td>
+                        <td data-label="Description">Completed Work Immersion in Computer Maintenance at Northills College of Asia</td>
                     </tr>
                     <tr>
-                        <td>2025</td>
-                        <td>Helper/Collector</td>
-                        <td>Avila Trucking</td>
-                        <td>Assisted in logistics operations as a Truck Helper at Avila's Trucking Business</td>
+                        <td data-label="Year">2025</td>
+                        <td data-label="Position">Helper/Collector</td>
+                        <td data-label="Company">Avila Trucking</td>
+                        <td data-label="Description">Assisted in logistics operations as a Truck Helper at Avila's Trucking Business</td>
                     </tr>
                     <tr>
-                        <td>2025-2026</td>
-                        <td>Buy&Sell</td>
-                        <td>Personal</td>
-                        <td>Managed an online buy-and-sell business via Facebook Marketplace</td>
+                        <td data-label="Year">2025-2026</td>
+                        <td data-label="Position">Buy&Sell</td>
+                        <td data-label="Company">Personal</td>
+                        <td data-label="Description">Managed an online buy-and-sell business via Facebook Marketplace</td>
                     </tr>
                     <tr>
-                        <td>2025-2026</td>
-                        <td>Freelance</td>
-                        <td>Personal</td>
-                        <td>Provided freelance computer repair services to multiple clients</td>
+                        <td data-label="Year">2025-2026</td>
+                        <td data-label="Position">Freelance</td>
+                        <td data-label="Company">Personal</td>
+                        <td data-label="Description">Provided freelance computer repair services to multiple clients</td>
                     </tr>
                     <tr>
-                        <td>2025-2026</td>
-                        <td>Member</td>
-                        <td>Team Based</td>
-                        <td>Developed small-scale system websites for business</td>
+                        <td data-label="Year">2025-2026</td>
+                        <td data-label="Position">Member</td>
+                        <td data-label="Company">Team Based</td>
+                        <td data-label="Description">Developed small-scale system websites for business</td>
                     </tr>
                     <tr>
-                        <td>2025-2026</td>
-                        <td>Team Leader/Project Manager</td>
-                        <td>Team Based</td>
-                        <td>Developed small-scale system for a BSIS organization</td>
+                        <td data-label="Year">2025-2026</td>
+                        <td data-label="Position">Team Leader/Project Manager</td>
+                        <td data-label="Company">Team Based</td>
+                        <td data-label="Description">Developed small-scale system for a BSIS organization</td>
                     </tr>
                     <tr>
-                        <td>2025-2026</td>
-                        <td>Team Leader/Project Manager</td>
-                        <td>Team Based</td>
-                        <td>Developed 2 Java based Games with GUI</td>
+                        <td data-label="Year">2025-2026</td>
+                        <td data-label="Position">Team Leader/Project Manager</td>
+                        <td data-label="Company">Team Based</td>
+                        <td data-label="Description">Developed 2 Java based Games with GUI</td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section liquid-glass">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="card">
-                <h3>Frontend Technologies</h3>
-                <ul>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>JavaScript</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Tools & Platforms</h3>
-                <ul>
-                    <li>Git & GitHub</li>
-                    <li>Visual Studio Code</li>
-                    <li>jetBrain IntelliJ</li>
-                    <li>Figma</li>
-                    <li>Claude AI</li>
-                    <li>Kimi AI</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Soft Skills</h3>
-                <ul>
-                    <li>Problem Solving</li>
-                    <li>Team Collaboration</li>
-                    <li>Communication</li>
-                    <li>Quality Output</li>
-                    <li>Project Management</li>
-                    <li>Attention to Detail</li>
-                </ul>
             </div>
         </div>
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="section liquid-glass">
+    <section id="education" class="section section-wide liquid-glass">
         <h2>Education</h2>
         <div class="card">
+            <div class="table-wrapper">
             <table class="table">
                 <thead>
                     <tr>
@@ -205,37 +218,38 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>2014-2019</td>
-                        <td>N/A</td>
-                        <td>Daguit Elementary School</td>
-                        <td>None</td>
+                        <td data-label="Year">2014-2019</td>
+                        <td data-label="Program">N/A</td>
+                        <td data-label="Institution">Daguit Elementary School</td>
+                        <td data-label="Achievements">None</td>
                     </tr>
                     <tr>
-                        <td>2019-2023</td>
-                        <td>junior High</td>
-                        <td>Daguit National High School</td>
-                        <td>with Honor</td>
+                        <td data-label="Year">2019-2023</td>
+                        <td data-label="Program">junior High</td>
+                        <td data-label="Institution">Daguit National High School</td>
+                        <td data-label="Achievements">with Honor</td>
                     </tr>
                     <tr>
-                        <td>2023-2025</td>
-                        <td>Senior High - TVL/CSS/ICT</td>
-                        <td>Daguit National High School</td>
-                        <td>with High Honor</td>
+                        <td data-label="Year">2023-2025</td>
+                        <td data-label="Program">Senior High - TVL/CSS/ICT</td>
+                        <td data-label="Institution">Daguit National High School</td>
+                        <td data-label="Achievements">with High Honor</td>
                     </tr>
                     <tr>
-                        <td>2025-2026</td>
-                        <td>Batchelor of Science in Information System</td>
-                        <td>Camarines Norte State College</td>
-                        <td>N/A</td>
+                        <td data-label="Year">2025-2026</td>
+                        <td data-label="Program">Batchelor of Science in Information System</td>
+                        <td data-label="Institution">Camarines Norte State College</td>
+                        <td data-label="Achievements">N/A</td>
                     </tr>
                      <tr>
-                        <td>2026-2027</td>
-                        <td>Batchelor of Science in Information System</td>
-                        <td>University of Camarines Norte</td>
-                        <td>N/A</td>
+                        <td data-label="Year">2026-2027</td>
+                        <td data-label="Program">Batchelor of Science in Information System</td>
+                        <td data-label="Institution">University of Camarines Norte</td>
+                        <td data-label="Achievements">N/A</td>
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
     </section>
 
@@ -260,7 +274,7 @@
                 <a href="#experience">Experience</a>
                 <a href="#skills">Skills</a>
                 <a href="#education">Education</a>
-                <a href="projects.html">Projects</a>
+                <a href="Projects.html">Projects</a>
                 <a href="#contact">Contact</a>
             </div>
             <div class="footer-social">
@@ -275,6 +289,34 @@
     </footer>
 
     <script>
+        // Mobile nav toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', function() {
+            const isOpen = navMenu.classList.toggle('open');
+            navToggle.classList.toggle('open', isOpen);
+            navToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close mobile menu after tapping a link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Close mobile menu when tapping outside of it
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -314,27 +356,6 @@
             });
         });
 
-        // Website Background Image Upload
-        const bgUpload = document.getElementById('bgUpload');
-        const bgPreview = document.getElementById('bgPreview');
-        
-        bgUpload.addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                
-                reader.addEventListener('load', function() {
-                    bgPreview.src = reader.result;
-                    bgPreview.style.display = 'block';
-                    
-                    // Apply the background to the entire page
-                    document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(${reader.result})`;
-                });
-                
-                reader.readAsDataURL(file);
-            }
-        });
-        
         // Initialize with home link active
         document.querySelector('a[href="#home"]').classList.add('active');
     </script>

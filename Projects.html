@@ -10,15 +10,23 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <ul>
-            <li><a href="index.html" class="nav-home"><i class="fas fa-home"></i>Home</a></li>
-            <li><a href="index.html">About</a></li>
-            <li><a href="index.html">Experience</a></li>
-            <li><a href="index.html">Skills</a></li>
-            <li><a href="index.html">Education</a></li>
-            <li><a href="Projects.html">Projects</a></li>
-            <li><a href="index.html">Contact</a></li>
-        </ul>
+        <div class="navbar-inner">
+            <a href="index.html" class="nav-brand">JTA</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="navMenu">
+                <li><a href="index.html" class="nav-home"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#education">Education</a></li>
+                <li><a href="Projects.html" class="active">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Main Content -->
@@ -34,29 +42,29 @@
             <div class="carousel">
                 <div class="carousel-slides">
                     <div class="slide active">
-                        <img src="img/SS.png.png" alt="E-commerce Platform">
+                        <img src="img/SS.png.png" alt="E-commerce Platform" loading="eager">
                         <div class="slide-content">
                             <h3>The Percky's Website</h3>
                             <p>This is our most accomplished project this year!!</p>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="img/w2.jpg" alt="Portfolio Dashboard">
+                        <img src="img/w2.jpg" alt="Portfolio Dashboard" loading="lazy">
                         <div class="slide-content">
                             <h3>Progress...</h3>
                             <p>The most important thing in development is progress</p>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="img/w1.jpg" alt="Travel Booking">
+                        <img src="img/w1.jpg" alt="Travel Booking" loading="lazy">
                         <div class="slide-content">
                             <h3>The Team MoniStock</h3>
                             <p>This is the people that makes things possible</p>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+                <button class="carousel-btn prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
                 <div class="carousel-dots">
                     <span class="dot active" data-index="0"></span>
                     <span class="dot" data-index="1"></span>
@@ -87,7 +95,6 @@
                 </div>
             </article>
 
-
             <!-- Project 2 -->
             <article class="project-card">
                 <div class="project-icon">
@@ -100,13 +107,13 @@
                     <span>JAVA</span>
                     <span>Javax Swing</span>
                     <span>GUI</span>
-                    <span></span>
                 </div>
                 <div class="project-links">
                     <a href="#" class="btn-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     <a href="#" class="btn-code"><i class="fab fa-github"></i> Code</a>
                 </div>
             </article>
+        </section>
 
         <!-- Back Button -->
         <div class="back-container">
@@ -123,11 +130,11 @@
                 <h3>Jansen Talento Almoete</h3>
             </div>
             <div class="footer-links">
-                <a href="Main.html#home">Home</a>
-                <a href="Main.html#about">About</a>
-                <a href="Main.html#experience">Experience</a>
-                <a href="projects.html">Projects</a>
-                <a href="Main.html#contact">Contact</a>
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#experience">Experience</a>
+                <a href="Projects.html">Projects</a>
+                <a href="index.html#contact">Contact</a>
             </div>
             <div class="footer-social">
                 <a href="#"><i class="fab fa-facebook"></i></a>
@@ -136,7 +143,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Jansen Talento Almoete. All rights reserved.</p>
+            <p>&copy; 2026 Jansen Talento Almoete. All rights reserved.</p>
         </div>
     </footer>
 

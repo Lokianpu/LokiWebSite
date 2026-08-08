@@ -1,3 +1,33 @@
+// Mobile navigation toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function() {
+            const isOpen = navMenu.classList.toggle('open');
+            navToggle.classList.toggle('open', isOpen);
+            navToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+});
+
 // Carousel functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Carousel elements
@@ -6,7 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const dots = document.querySelectorAll('.dot');
     const prevBtn = document.querySelector('.carousel-btn.prev');
     const nextBtn = document.querySelector('.carousel-btn.next');
-    
+    const carousel = document.querySelector('.carousel');
+
+    if (!slides || !carousel) return;
+
     let currentSlide = 0;
     const totalSlides = slideElements.length;
     let slideInterval;
@@ -78,7 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Pause auto-slide on hover
-    const carousel = document.querySelector('.carousel');
     carousel.addEventListener('mouseenter', stopAutoSlide);
     carousel.addEventListener('mouseleave', startAutoSlide);
     
@@ -95,6 +127,29 @@ document.addEventListener('DOMContentLoaded', function() {
             startAutoSlide();
         }
     });
+
+    // Touch / swipe navigation for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const swipeThreshold = 40;
+
+    carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoSlide();
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const delta = touchEndX - touchStartX;
+        if (Math.abs(delta) > swipeThreshold) {
+            if (delta < 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+        startAutoSlide();
+    }, { passive: true });
     
     // Initialize carousel and start auto sliding
     updateCarousel();
